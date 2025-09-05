@@ -35,5 +35,8 @@ build/
 # Note: js/env.js is now tracked as a template file
 # Real values should only be added locally for development
 
+# Local development environment files
+js/env.local.js
+
 # Cache
 .cache/
