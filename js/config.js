@@ -2,11 +2,11 @@
 // 프로덕션 환경에서는 빌드 시점에 환경변수로 치환되어야 함
 
 window.CONFIG = {
-    // Supabase 설정 (환경변수에서만 가져오기 - 보안상 기본값 제거)
+    // Supabase 설정 - Netlify 환경변수에서 주입됨
     SUPABASE_URL: window.ENV?.SUPABASE_URL || null,
     SUPABASE_ANON_KEY: window.ENV?.SUPABASE_ANON_KEY || null,
     
-    // 관리자 설정 (환경변수에서만 가져오기)
+    // 관리자 설정 - Netlify 환경변수에서 주입됨
     ADMIN_EMAIL: window.ENV?.ADMIN_EMAIL || null,
     
     // 애플리케이션 설정

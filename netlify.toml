@@ -1,0 +1,19 @@
+[build]
+  # 빌드 명령어 - env.js 파일을 환경변수로 생성
+  command = '''
+    echo "window.ENV = {
+      SUPABASE_URL: '$SUPABASE_URL',
+      SUPABASE_ANON_KEY: '$SUPABASE_ANON_KEY', 
+      ADMIN_EMAIL: '$ADMIN_EMAIL',
+      NODE_ENV: 'production'
+    };" > js/env.js
+  '''
+  
+  # 배포할 폴더
+  publish = "."
+
+# 환경변수 기본값 (Netlify UI에서 설정하면 덮어씀)
+[build.environment]
+  SUPABASE_URL = "https://ejqnjxoblfctkouswgkh.supabase.co"
+  SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVqcW5qeG9ibGZjdGtvdXN3Z2toIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwNjUzMDMsImV4cCI6MjA3MDY0MTMwM30.GQ0hxwrvxvPe7LIWbMRal720FhGmhkr2Krqi5VuNsdU"
+  ADMIN_EMAIL = "counted07@gmail.com"
