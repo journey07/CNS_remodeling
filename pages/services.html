@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACCP 컨설팅 - CNS HACCP Total Solution</title>
+    <meta name="description" content="HACCP 7원칙 12절차 기반 전문 컨설팅 서비스">
+    <meta name="keywords" content="HACCP 컨설팅, 해썹 컨설팅, HACCP 7원칙, HACCP 12절차, 식품안전관리인증, 해썹 인증 컨설팅, 식품안전 컨설팅">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="HACCP 컨설팅 - CNS HACCP Total Solution">
+    <meta property="og:description" content="HACCP 7원칙 12절차 기반 전문 컨설팅 서비스">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cns-haccp.com/pages/services.html">
+    <meta property="og:image" content="https://www.cns-haccp.com/assets/consulting1.png">
+    <meta property="og:site_name" content="CNS HACCP Total Solution">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HACCP 컨설팅 - CNS HACCP Total Solution">
+    <meta name="twitter:description" content="HACCP 7원칙 12절차 기반 전문 컨설팅 서비스">
+    <meta name="twitter:image" content="https://www.cns-haccp.com/assets/consulting1.png">
+    
+    <!-- 구조화된 데이터 - Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "HACCP 컨설팅",
+        "provider": {
+            "@type": "Organization",
+            "name": "씨앤에스(주)",
+            "url": "https://www.cns-haccp.com"
+        },
+        "description": "HACCP 7원칙 12절차 기반 전문 컨설팅 서비스",
+        "serviceType": "식품안전관리인증 컨설팅",
+        "areaServed": "대한민국",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "HACCP 컨설팅 서비스",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "위해요소 분석",
+                        "description": "식품원료와 제조 가공 공정의 위해요소 분석"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "중요관리점 설정",
+                        "description": "HACCP 7원칙에 따른 중요관리점 설정"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "모니터링 시스템 구축",
+                        "description": "체계적인 모니터링 및 기록관리 시스템 구축"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Paperlogy extra bold for navigation company name */
+        @font-face {
+            font-family: 'Paperlogy-8ExtraBold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 모바일 전용 스타일 - 제목과 부제목 사이 간격 줄이기 */
+        @media (max-width: 768px) {
+            /* 모든 섹션의 제목과 부제목 사이 간격 완전 제거 (마이너스 마진) */
+            .consulting-process-section .section-header .section-title,
+            .advantages-section .section-header .section-title,
+            .consulting-timeline-section .section-header .section-title,
+            .consulting-verification-section .section-header .section-title {
+                margin-bottom: -5px !important;
+            }
+        }
+
+        /* 작은 모바일 화면 (480px 이하) */
+        @media (max-width: 480px) {
+            /* 작은 모바일에서 제목과 부제목 사이 간격 더 줄이기 (더 큰 마이너스) */
+            .consulting-process-section .section-header .section-title,
+            .advantages-section .section-header .section-title,
+            .consulting-timeline-section .section-header .section-title,
+            .consulting-verification-section .section-header .section-title {
+                margin-bottom: -8px !important;
+                font-size: 28px !important;
+            }
+        }
+        
+        /* 🎯 모바일 CTA 섹션 최적화 */
+        @media (max-width: 768px) {
+            .cta-section-white {
+                padding: 35px 20px !important;
+                margin: -60px 0 55px 0 !important;
+            }
+            
+            .cta-title {
+                font-size: 30px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 15px !important;
+                text-align: center !important;
+                font-weight: 700 !important;
+                color: #1a1a1a !important;
+                word-break: keep-all;
+            }
+            
+            .cta-description {
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+                text-align: center !important;
+                word-break: keep-all;
+                margin-bottom: 25px !important;
+                color: #555 !important;
+                padding: 0 10px !important;
+            }
+            
+            .cta-buttons {
+                flex-direction: column !important;
+                gap: 15px !important;
+                align-items: center !important;
+                max-width: 350px !important;
+                margin: 0 auto !important;
+            }
+            
+            .btn {
+                width: 100% !important;
+                max-width: 320px !important;
+                padding: 16px 24px !important;
+                font-size: 18px !important;
+                font-weight: 600 !important;
+                text-align: center !important;
+                border-radius: 8px !important;
+                transition: all 0.3s ease !important;
+                letter-spacing: 0.5px !important;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                background: #ffffff !important;
+                color: #1a1a1a !important;
+                border: 2px solid #e9ecef !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+            }
+            
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+                border-color: #1a1a1a !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 CTA 섹션 최적화 */
+        @media (max-width: 480px) {
+            .cta-section-white {
+                padding: 25px 15px !important;
+                margin: -65px 0 45px 0 !important;
+            }
+            
+            .cta-title {
+                font-size: 28px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 12px !important;
+                font-weight: 700 !important;
+                padding: 0 5px !important;
+            }
+            
+            .cta-description {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 20px !important;
+                padding: 0 8px !important;
+            }
+            
+            .cta-buttons {
+                max-width: 300px !important;
+                gap: 12px !important;
+            }
+            
+            .btn {
+                max-width: 280px !important;
+                padding: 14px 20px !important;
+                font-size: 16px !important;
+                font-weight: 600 !important;
+                border-radius: 6px !important;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                background: #ffffff !important;
+                color: #1a1a1a !important;
+                border: 2px solid #e9ecef !important;
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1) !important;
+            }
+            
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                transform: translateY(-1px) !important;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+                border-color: #1a1a1a !important;
+            }
+        }
+
+        /* 🎯 모바일 메인 서브타이틀 줄바꿈 최적화 */
+        @media (max-width: 768px) {
+            .page-subtitle .subtitle-text {
+                word-break: keep-all !important;
+                line-height: 1.5 !important;
+            }
+            
+            .page-subtitle .subtitle-text br {
+                display: none !important;
+            }
+            
+            .page-subtitle .subtitle-text::after {
+                content: "씨앤에스(주)만의 차별화된 5가지 전문 노하우를 활용하여 지속가능한 HACCP 시스템 구축과 인증 획득을 완벽하게 컨설팅합니다." !important;
+            }
+            
+            .page-subtitle .subtitle-text {
+                display: none !important;
+            }
+            
+            .page-subtitle::before {
+                content: "씨앤에스(주)만의 차별화된 5가지 전문 노하우를 활용하여 지속가능한 HACCP 시스템 구축과 인증 획득을 완벽하게 컨설팅합니다." !important;
+                display: block !important;
+                word-break: keep-all !important;
+                line-height: 1.5 !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 메인 서브타이틀 줄바꿈 최적화 */
+        @media (max-width: 480px) {
+            .page-subtitle::before {
+                content: "씨앤에스(주)만의 차별화된 5가지 전문 노하우를 활용하여 지속가능한 HACCP 시스템 구축과 인증 획득을 완벽하게 컨설팅합니다." !important;
+                display: block !important;
+                word-break: keep-all !important;
+                line-height: 1.4 !important;
+            }
+        }
+
+        /* 🎯 모바일 divider와 첫 섹션 간격 줄이기 */
+        @media (max-width: 768px) {
+            .page-description {
+                margin-bottom: 30px !important;
+            }
+            
+            .consulting-process-section {
+                margin-top: -10px !important;
+            }
+        }
+
+        /* 🎯 모바일 divider와 첫 섹션 간격 늘리기 */
+        @media (max-width: 768px) {
+            .services-consulting-page .page-description {
+                margin-bottom: 50px !important;
+            }
+            
+            .services-consulting-page .container > section:first-of-type,
+            .services-consulting-page section.consulting-process-section:first-of-type {
+                margin-top: 30px !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 divider와 첫 섹션 간격 늘리기 */
+        @media (max-width: 480px) {
+            .services-consulting-page .page-description {
+                margin-bottom: 40px !important;
+            }
+            
+            .services-consulting-page .container > section:first-of-type,
+            .services-consulting-page section.consulting-process-section:first-of-type {
+                margin-top: 25px !important;
+            }
+        }
+
+        /* 🎯 모바일 전체 섹션 왼쪽 정렬 강제 적용 */
+        @media (max-width: 768px) {
+            /* 섹션 헤더 강제 왼쪽 정렬 */
+            .services-consulting-page section.consulting-process-section .section-header,
+            .services-consulting-page section.advantages-section .section-header,
+            .services-consulting-page section.consulting-timeline-section .section-header,
+            .services-consulting-page section.consulting-verification-section .section-header,
+            .services-consulting-page .consulting-process-section .section-header,
+            .services-consulting-page .advantages-section .section-header,
+            .services-consulting-page .consulting-timeline-section .section-header,
+            .services-consulting-page .consulting-verification-section .section-header {
+                text-align: left !important;
+                display: block !important;
+                gap: 0 !important;
+                flex-direction: column !important;
+            }
+            
+            /* 타이틀 강제 왼쪽 정렬 */
+            .services-consulting-page .consulting-process-section .section-header h2.section-title,
+            .services-consulting-page .advantages-section .section-header h2.section-title,
+            .services-consulting-page .consulting-timeline-section .section-header h2.section-title,
+            .services-consulting-page .consulting-verification-section .section-header h2.section-title,
+            .services-consulting-page section h2.section-title {
+                font-size: 26px !important;
+                line-height: 1.3 !important;
+                text-align: left !important;
+                padding-left: 20px !important;
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                margin-bottom: 8px !important;
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            /* 서브타이틀 강제 왼쪽 정렬 */
+            .services-consulting-page .consulting-process-section .section-header .section-subtitle,
+            .services-consulting-page .advantages-section .section-header .section-subtitle,
+            .services-consulting-page .consulting-timeline-section .section-header .section-subtitle,
+            .services-consulting-page .consulting-verification-section .section-header .section-subtitle,
+            .services-consulting-page section .section-subtitle {
+                text-align: left !important;
+                padding-left: 20px !important;
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                margin-top: 8px !important;
+                margin-bottom: 0 !important;
+                line-height: 1.3 !important;
+                display: block !important;
+                width: 100% !important;
+            }
+        }
+
+        /* 🎯 모바일 전체 섹션 간격 통일 */
+        @media (max-width: 768px) {
+            /* 모든 섹션에 일관된 간격 적용 */
+            .services-consulting-page .container > section,
+            .services-consulting-page section {
+                margin-bottom: 35px !important;
+                padding-bottom: 0 !important;
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            /* 이미지와 다음 섹션 타이틀 사이 간격 늘리기 - 더 강력한 선택자 */
+            .services-consulting-page .consulting-process-section .section-image,
+            .services-consulting-page .advantages-section .section-image,
+            .services-consulting-page .consulting-timeline-section .section-image,
+            .services-consulting-page .consulting-verification-section .section-image {
+                margin: 0 0 25px 0 !important;
+                padding-bottom: 0 !important;
+            }
+            
+            /* 첫 번째 섹션만 상단 마진 조정 */
+            .services-consulting-page .container > section:first-of-type {
+                margin-top: 0 !important;
+            }
+            
+            /* 섹션 헤더와 이미지 사이 간격 줄이기 */
+            .services-consulting-page .section-header {
+                margin-bottom: 18px !important;
+                margin-top: 0 !important;
+            }
+            
+            /* 이미지와 다음 섹션 사이 간격 줄이기 */
+            .services-consulting-page .section-image {
+                margin-bottom: 0 !important;
+                margin-top: 0 !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 전체 섹션 간격 더 통일 */
+        @media (max-width: 480px) {
+            /* 모든 섹션에 일관된 간격 적용 */
+            .services-consulting-page .container > section,
+            .services-consulting-page section {
+                margin-bottom: 25px !important;
+                padding-bottom: 0 !important;
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            /* 첫 번째 섹션만 상단 마진 조정 */
+            .services-consulting-page .container > section:first-of-type {
+                margin-top: 0 !important;
+            }
+            
+            /* 섹션 헤더와 이미지 사이 간격 더 줄이기 */
+            .services-consulting-page .section-header {
+                margin-bottom: 12px !important;
+                margin-top: 0 !important;
+            }
+            
+            /* 이미지와 다음 섹션 타이틀 사이 간격 늘리기 - 더 강력한 선택자 */
+            .services-consulting-page .consulting-process-section .section-image,
+            .services-consulting-page .advantages-section .section-image,
+            .services-consulting-page .consulting-timeline-section .section-image,
+            .services-consulting-page .consulting-verification-section .section-image {
+                margin: 0 0 20px 0 !important;
+                padding-bottom: 0 !important;
+            }
+            
+            /* 모든 섹션 헤더 강제 왼쪽 정렬 */
+            .services-consulting-page section .section-header,
+            .services-consulting-page .section-header {
+                text-align: left !important;
+                display: block !important;
+                gap: 0 !important;
+                flex-direction: column !important;
+            }
+            
+            /* 타이틀 강제 왼쪽 정렬 */
+            .services-consulting-page .consulting-process-section .section-header h2.section-title,
+            .services-consulting-page .advantages-section .section-header h2.section-title,
+            .services-consulting-page .consulting-timeline-section .section-header h2.section-title,
+            .services-consulting-page .consulting-verification-section .section-header h2.section-title,
+            .services-consulting-page section h2.section-title {
+                font-size: 21px !important;
+                line-height: 1.2 !important;
+                margin-bottom: 8px !important;
+                text-align: left !important;
+                padding-left: 16px !important;
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            /* 서브타이틀 강제 왼쪽 정렬 */
+            .services-consulting-page .consulting-process-section .section-header .section-subtitle,
+            .services-consulting-page .advantages-section .section-header .section-subtitle,
+            .services-consulting-page .consulting-timeline-section .section-header .section-subtitle,
+            .services-consulting-page .consulting-verification-section .section-header .section-subtitle,
+            .services-consulting-page section .section-subtitle {
+                text-align: left !important;
+                padding-left: 16px !important;
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                margin-top: 8px !important;
+                margin-bottom: 0 !important;
+                line-height: 1.2 !important;
+                display: block !important;
+                width: 100% !important;
+            }
+        }
+
+        /* 🎯 모바일 모든 섹션 강제 통일 간격 */
+        @media (max-width: 768px) {
+            .services-consulting-page section h2.section-title {
+                font-size: 26px !important;
+                text-align: left !important;
+                padding-left: 20px !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .services-consulting-page section .section-subtitle {
+                text-align: left !important;
+                padding-left: 20px !important;
+                margin-top: 8px !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* 🔥 최강 강제 이미지 간격 적용 */
+            .services-consulting-page section:nth-child(1) .section-image,
+            .services-consulting-page section:nth-child(2) .section-image,
+            .services-consulting-page section:nth-child(3) .section-image,
+            .services-consulting-page section:nth-child(4) .section-image,
+            .services-consulting-page section:nth-child(5) .section-image {
+                margin: 0 0 60px 0 !important;
+                padding: 40px !important;
+                background: white !important;
+                border-radius: 20px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-consulting-page section h2.section-title {
+                font-size: 21px !important;
+                text-align: left !important;
+                padding-left: 16px !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .services-consulting-page section .section-subtitle {
+                text-align: left !important;
+                padding-left: 16px !important;
+                margin-top: 8px !important;
+                line-height: 1.2 !important;
+            }
+            
+            /* 🔥 최강 강제 이미지 간격 적용 */
+            .services-consulting-page section:nth-child(1) .section-image,
+            .services-consulting-page section:nth-child(2) .section-image,
+            .services-consulting-page section:nth-child(3) .section-image,
+            .services-consulting-page section:nth-child(4) .section-image,
+            .services-consulting-page section:nth-child(5) .section-image {
+                margin: 0 0 60px 0 !important;
+                padding: 24px !important;
+                background: white !important;
+                border-radius: 20px !important;
+            }
+        }
+
+        /* 🚨 절대적 강제 이미지 간격 - 모든 기존 CSS 오버라이드 */
+        @media screen and (max-width: 768px) {
+            body .services-consulting-page .container section .section-image {
+                margin-bottom: 60px !important;
+                margin-top: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body .services-consulting-page .container section .section-image {
+                margin-bottom: 60px !important;
+                margin-top: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+
+        /* 🚨 ID 사용한 절대적 강제 적용 */
+        @media (max-width: 768px) {
+            #services-page .section-image,
+            [class*="services"] .section-image,
+            [class*="consulting"] .section-image {
+                margin-bottom: 60px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #services-page .section-image,
+            [class*="services"] .section-image,
+            [class*="consulting"] .section-image {
+                margin-bottom: 60px !important;
+            }
+        }
+
+        /* 🎯 모바일 이미지 크기 늘리기 */
+        @media (max-width: 768px) {
+            .services-consulting-page .section-image .consulting-image,
+            .services-consulting-page .consulting-image {
+                width: 95% !important;
+                max-width: 95% !important;
+                height: auto !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-consulting-page .section-image .consulting-image,
+            .services-consulting-page .consulting-image {
+                width: 98% !important;
+                max-width: 98% !important;
+                height: auto !important;
+            }
+        }
+
+        /* 🎯 모바일 이미지 설명 줄바꿈 자연스럽게 */
+        @media (max-width: 768px) {
+            .services-consulting-page .image-subtitle {
+                word-break: keep-all !important;
+                line-height: 1.6 !important;
+                text-align: center !important;
+                padding: 0 10px !important;
+            }
+            
+            .services-consulting-page .image-subtitle br {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-consulting-page .image-subtitle {
+                word-break: keep-all !important;
+                line-height: 1.5 !important;
+                text-align: center !important;
+                padding: 0 8px !important;
+                font-size: 14px !important;
+            }
+        }
+
+        /* 🎯 5번째 섹션 내부 텍스트에만 하단 여백 추가 (섹션 외부 간격은 건들지 않음) */
+        @media (max-width: 768px) {
+            .services-consulting-page .consulting-verification-section .image-subtitle {
+                margin-bottom: 30px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-consulting-page .consulting-verification-section .image-subtitle {
+                margin-bottom: 25px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        /* 🎯 5번째 섹션과 CTA 사이 간격 줄이기 */
+        @media (max-width: 768px) {
+            .services-consulting-page .consulting-verification-section {
+                margin-bottom: 15px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-consulting-page .consulting-verification-section {
+                margin-bottom: -10px !important;
+            }
+        }
+
+        /* 🎯 모바일 CTA 텍스트 줄바꿈 제어 */
+        /* 데스크톱에서는 모바일 줄바꿈 숨기기 */
+        .mobile-break {
+            display: none;
+        }
+
+        /* 모바일에서만 줄바꿈 표시 */
+        @media (max-width: 768px) {
+            .mobile-break {
+                display: inline !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/logo4.png" alt="CNS Logo">
+                </a>
+                <a href="../index.html"><span class="company-name">씨앤에스(주)</span></a>
+            </div>
+
+            <div class="nav-group">
+                <nav class="nav">
+                    <div class="nav-dropdown">
+                        <a href="greeting.html" class="nav-link">회사소개</a>
+                        <div class="dropdown-menu">
+                            <a href="greeting.html" class="dropdown-link">인사말</a>
+                            <a href="business.html" class="dropdown-link">사업분야</a>
+                            <a href="location.html" class="dropdown-link">찾아오시는 길</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="services-construction.html" class="nav-link">HACCP 서비스</a>
+                        <div class="dropdown-menu">
+                            <a href="services-construction.html" class="dropdown-link">HACCP 공사</a>
+                            <a href="services-equipment.html" class="dropdown-link">HACCP 설비</a>
+                            <a href="services.html" class="dropdown-link active">HACCP 컨설팅</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="cases.html" class="nav-link">사업실적</a>
+                        <div class="dropdown-menu">
+                            <a href="cases.html" class="dropdown-link">HACCP 공사실적</a>
+                            <a href="achievements.html" class="dropdown-link">전체 추진실적</a>
+                        </div>
+                    </div>
+                </nav>
+                <a href="contact.html" class="nav-cta-button">고객문의</a>
+            </div>
+            
+            <!-- 모바일 네비게이션 토글 버튼 -->
+            <button class="mobile-nav-toggle" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+        <div class="page services-consulting-page">
+            <div class="container">
+                <div class="page-header">
+                    <div class="page-header-content">
+                        <h1 class="page-title">HACCP 컨설팅</h1>
+                        <div class="page-description">
+                            <div class="divider-line"></div>
+                            <p class="page-subtitle">
+                                <span class="subtitle-text">씨앤에스(주)만의 차별화된 5가지 전문 노하우를 활용하여<br> 지속가능한 HACCP 시스템 구축과 인증 획득을 완벽하게 컨설팅합니다.</span>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- HACCP 7원칙 12절차 -->
+                <section class="consulting-process-section">
+                    <div class="section-header">
+                        <h2 class="section-title">1. HACCP 전문 컨설팅 시스템</h2>
+                        <p class="section-subtitle">과학적 분석부터 완벽한 실행까지, 체계적인 HACCP 솔루션</p>
+                    </div>
+
+                    <div class="section-image">
+                        <img src="../assets/consulting1.png" alt="HACCP 전문 컨설팅 시스템" class="consulting-image">
+                        <p class="image-subtitle"><strong>위해요소 분석 → 중요관리점 설정 → 모니터링 시스템 구축 → 검증 및 기록관리</strong><br>
+                        국제 표준 <strong>HACCP 7원칙 12절차</strong>를 적용한 체계적인 컨설팅입니다.</p>
+                    </div>
+                </section>
+
+                <!-- 성공 보장 시스템 -->
+                <section class="advantages-section">
+                    <div class="section-header">
+                        <h2 class="section-title">2. 체계적인 식품위생관리</h2>
+                        <p class="section-subtitle">CNS만의 검증된 전문 노하우로 만들어진 관리 프로세스</p>
+                    </div>
+
+                    <div class="section-image">
+                        <img src="../assets/consulting2.png" alt="위해요소 분석" class="consulting-image">
+                        <p class="image-subtitle"><strong>식품원료와 제조 가공 공정 및 최종 소비단계의 섭취 대상을 고려하여</strong><br>
+                        각 단계에서 발생할 수 있는 <strong>위해요소를 분석하여 예방할 수 있는 조치를 시행</strong>합니다.</p>
+                    </div>
+                </section>
+
+                <!-- 완벽한 실행 프로세스 -->
+                <section class="consulting-timeline-section">
+                    <div class="section-header">
+                        <h2 class="section-title">3. 치밀한 HACCP 관리계획</h2>
+                        <p class="section-subtitle">위해요소 예방·제거 위한 HACCP 관리계획 수립</p>
+                    </div>
+
+                    <div class="section-image">
+                        <img src="../assets/consulting3.png" alt="HACCP 관리 계획 수립" class="consulting-image">
+                        <p class="image-subtitle"><strong>현장 진단부터 인증 완료까지, 단계별 완벽 지원</strong><br>
+                        <strong>HACCP 시스템의 지속적 개선과 유지보수를 보장</strong>합니다.</p>
+                    </div>
+                </section>
+
+                <!-- HACCP 추진 절차 -->
+                <section class="consulting-process-section">
+                    <div class="section-header">
+                        <h2 class="section-title">4. 꼼꼼한 중요관리점 관리</h2>
+                        <p class="section-subtitle">중요공정 기준설정 및 지속적인 개선</p>
+                    </div>
+
+                    <div class="section-image">
+                        <img src="../assets/consulting4.png" alt="HACCP 시스템 실행 및 개선" class="consulting-image">
+                        <p class="image-subtitle"><strong>중요공정에 대한 한계기준, 모니터링, 개선조치, 검증 및 기록 방법을 정하여</strong><br>
+                        <strong>실시하고 지속적으로 개선될 수 있도록</strong> 합니다.</p>
+                    </div>
+                </section>
+
+                <!-- HACCP 시스템 검증 및 유지 -->
+                <section class="consulting-verification-section">
+                    <div class="section-header">
+                        <h2 class="section-title">5. 완벽한 HACCP 인증 프로세스</h2>
+                        <p class="section-subtitle">현장 진단부터 인증 완료까지, 단계별 완벽 지원</p>
+                    </div>
+                    <div class="section-image">
+                        <img src="../assets/consulting5.png" alt="HACCP 시스템 검증 및 유지" class="consulting-image">
+                        <p class="image-subtitle"><strong>현장 진단부터 문서 작성, 시스템 구축, 직원 교육, 심사 대응까지<br> 모든 과정을 체계적으로 지원하여 인증 획득을 보장</strong>합니다.</p>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section-white">
+        <div class="cta-content">
+            <h2 class="cta-title">
+                <span class="title-text">HACCP 인증,<br class="mobile-break"> 확실하게 성공하고 싶다면?</span>
+            </h2>
+            <p class="cta-description">
+                <span class="desc-text">200여곳 경험의 전문 컨설턴트가<br class="mobile-break"> 처음부터 끝까지 함께합니다.<br>
+                최고 수준의 컨설팅을 지금 문의해보세요.</span>
+            </p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">
+                    무료 상담 · 견적 문의
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <span class="btn btn-secondary" style="cursor: default;">
+                    02-6675-0751
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/logo4.png" alt="CNS Logo">
+                </div>
+                <div class="footer-info">
+                    <p>
+                        <strong>상호</strong> 씨앤에스(주)
+                    </p>
+                    <p>
+                        <strong>사업자등록번호</strong> 817-88-02063
+                    </p>
+                    <p>
+                        <strong>주소</strong> 서울 영등포구 양산로 57-5, 1006호(양평동3가, 이노플렉스)
+                    </p>
+                    <p>
+                        <strong>대표번호</strong> 02-6675-0751~5
+                    </p>
+                    <p>
+                        <strong>FAX</strong> 02-6675-0756
+                    </p>
+                    <p>
+                        <strong>E-mail</strong> cns0751@hanmail.net
+                    </p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                Copyright(c) 2025 CNS. All rights reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+    <!-- 모바일 네비게이션 오버레이 -->
+    <div class="mobile-nav-overlay"></div>
+    
+    <!-- 모바일 네비게이션 메뉴 -->
+    <div class="mobile-nav-menu">
+        <div class="mobile-nav-header">
+            <a href="../index.html"><span class="company-name">씨앤에스(주)</span></a>
+            <button class="mobile-nav-close" aria-label="메뉴 닫기">&times;</button>
+        </div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">회사소개</div>
+                <a href="greeting.html" class="mobile-nav-link">인사말</a>
+                <a href="business.html" class="mobile-nav-link">사업분야</a>
+                <a href="location.html" class="mobile-nav-link">찾아오시는 길</a>
+            </div>
+            
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">HACCP 서비스</div>
+                <a href="services-construction.html" class="mobile-nav-link">HACCP 공사</a>
+                <a href="services-equipment.html" class="mobile-nav-link">HACCP 설비</a>
+                <a href="services.html" class="mobile-nav-link">HACCP 컨설팅</a>
+            </div>
+            
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">사업실적</div>
+                <a href="cases.html" class="mobile-nav-link">HACCP 공사실적</a>
+                <a href="achievements.html" class="mobile-nav-link">전체 추진실적</a>
+            </div>
+        </div>
+        <a href="contact.html" class="mobile-nav-cta">고객문의</a>
+    </div>
+</body>
+</html> 

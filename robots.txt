@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://www.cns-haccp.com/sitemap.xml
+
+# 관리자 페이지는 크롤링 제외
+Disallow: /pages/admin.html
+Disallow: /pages/admin-achievements.html

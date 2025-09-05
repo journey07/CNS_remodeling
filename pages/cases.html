@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사업실적 - CNS HACCP Total Solution</title>
+    <meta name="description" content="CNS의 200개의 다양한 업종의 HACCP 공사, 설비, 컨설팅 사업실적을 확인하세요.">
+    <meta name="keywords" content="HACCP 사업실적, 해썹 포트폴리오, HACCP 인증업체, 해썹 성공사례, 식품안전 실적, HACCP 프로젝트 사례">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="사업실적 - CNS HACCP Total Solution">
+    <meta property="og:description" content="CNS의 200개의 다양한 업종의 HACCP 공사, 설비, 컨설팅 사업실적을 확인하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cns-haccp.com/pages/cases.html">
+    <meta property="og:image" content="https://www.cns-haccp.com/assets/portfolio/배추김치/1.JPG">
+    <meta property="og:site_name" content="CNS HACCP Total Solution">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="사업실적 - CNS HACCP Total Solution">
+    <meta name="twitter:description" content="CNS의 200개의 다양한 업종의 HACCP 공사, 설비, 컨설팅 사업실적을 확인하세요.">
+    <meta name="twitter:image" content="https://www.cns-haccp.com/assets/portfolio/배추김치/1.JPG">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Paperlogy extra bold for navigation company name */
+        @font-face {
+            font-family: 'Paperlogy-8ExtraBold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* 🎯 모바일 필터 안내 텍스트 줄바꿈 제어 */
+        /* 데스크톱에서는 모바일 줄바꿈 숨기기 */
+        .mobile-break {
+            display: none;
+        }
+
+        /* 모바일에서만 줄바꿈 표시 */
+        @media (max-width: 768px) {
+            .mobile-break {
+                display: inline !important;
+            }
+            
+            /* 🎯 필터 안내 문구와 필터 버튼 사이 간격 줄이기 */
+            .filter-guide {
+                margin-bottom: 20px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 화면에서 간격 더 줄이기 */
+        @media (max-width: 480px) {
+            .filter-guide {
+                margin-bottom: 17px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        /* 🎯 모바일 실적카드와 footer 사이 간격 줄이기 */
+        @media (max-width: 768px) {
+            .case-grid {
+                margin-bottom: 40px !important; /* 기본 80px에서 40px로 줄임 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .case-grid {
+                margin-bottom: 30px !important; /* 작은 모바일에서 더 줄임 */
+            }
+        }
+
+        /* 🎯 모바일 모달 최적화 */
+        @media (max-width: 768px) {
+            .modal-content {
+                flex-direction: column !important;
+                width: 95% !important;
+                max-width: 95% !important;
+                max-height: 95vh !important;
+                margin: auto !important;
+                position: relative !important;
+            }
+            
+            /* 🎯 모바일 닫기 버튼 위치 조정 */
+            .modal-close-btn {
+                position: absolute !important;
+                top: 12px !important;
+                right: 12px !important;
+                width: 44px !important;
+                height: 44px !important;
+                background: rgba(0, 0, 0, 0.7) !important;
+                backdrop-filter: blur(8px) !important;
+                border-radius: 16px !important;
+                z-index: 1000 !important;
+                color: white !important;
+                font-size: 24px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .modal-close-btn:hover {
+                background: rgba(0, 0, 0, 0.85) !important;
+                color: white !important;
+                transform: scale(1.05) !important;
+            }
+            
+            .modal-gallery {
+                flex: none !important;
+                padding: 16px !important;
+                order: 1;
+            }
+            
+            .modal-main-image {
+                max-height: 40vh !important;
+                margin-bottom: 12px !important;
+            }
+            
+            .modal-main-image img {
+                max-height: 40vh !important;
+                border-radius: 8px !important;
+            }
+            
+            .modal-thumb-images {
+                gap: 8px !important;
+                margin-top: 8px !important;
+                justify-content: center !important;
+                flex-wrap: wrap !important;
+            }
+            
+            .modal-thumb-images img {
+                width: 80px !important;
+                height: 80px !important;
+                flex: 0 0 80px !important;
+                border-radius: 6px !important;
+            }
+            
+            .modal-info {
+                flex: none !important;
+                padding: 16px !important;
+                border-left: none !important;
+                border-top: 1px solid var(--gray-100) !important;
+                order: 2;
+            }
+            
+            .modal-info h2 {
+                font-size: 22px !important;
+                margin-bottom: 6px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .modal-info .location {
+                font-size: 14px !important;
+                margin-bottom: 16px !important;
+            }
+            
+            .modal-info .info-section {
+                margin-bottom: 14px !important;
+            }
+            
+            .modal-info .info-section h3 {
+                font-size: 15px !important;
+                margin-bottom: 6px !important;
+                padding-left: 8px !important;
+            }
+            
+            .modal-info .info-section p {
+                font-size: 14px !important;
+                padding-left: 11px !important;
+                line-height: 1.4 !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 모달 최적화 */
+        @media (max-width: 480px) {
+            .modal-content {
+                width: 98% !important;
+                max-height: 98vh !important;
+            }
+            
+            /* 🎯 작은 모바일 닫기 버튼 위치 조정 */
+            .modal-close-btn {
+                top: 8px !important;
+                right: 8px !important;
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 12px !important;
+                font-size: 22px !important;
+            }
+            
+            .modal-gallery {
+                padding: 12px !important;
+            }
+            
+            .modal-main-image {
+                max-height: 35vh !important;
+            }
+            
+            .modal-main-image img {
+                max-height: 35vh !important;
+            }
+            
+            .modal-thumb-images img {
+                width: 70px !important;
+                height: 70px !important;
+                flex: 0 0 70px !important;
+            }
+            
+            .modal-info {
+                padding: 12px !important;
+            }
+            
+            .modal-info h2 {
+                font-size: 20px !important;
+            }
+            
+            .modal-info .location {
+                font-size: 13px !important;
+                margin-bottom: 12px !important;
+            }
+            
+            .modal-info .info-section {
+                margin-bottom: 12px !important;
+            }
+            
+            .modal-info .info-section h3 {
+                font-size: 14px !important;
+                margin-bottom: 5px !important;
+            }
+            
+            .modal-info .info-section p {
+                font-size: 13px !important;
+                padding-left: 9px !important;
+            }
+        }
+
+        /* 🎯 스켈레톤 로딩 카드 스타일 */
+        .case-card-skeleton {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            animation: skeleton-pulse 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes skeleton-pulse {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .skeleton-image {
+            height: 260px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-shimmer 1.5s infinite;
+        }
+
+        @keyframes skeleton-shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .skeleton-content {
+            padding: 20px 25px 35px 25px;
+        }
+
+        .skeleton-title {
+            height: 20px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-shimmer 1.5s infinite;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            width: 70%;
+        }
+
+        .skeleton-industry {
+            height: 24px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-shimmer 1.5s infinite;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            width: 50%;
+        }
+
+        .skeleton-duration {
+            height: 16px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-shimmer 1.5s infinite;
+            border-radius: 4px;
+            width: 40%;
+        }
+
+        /* 🎯 모바일에서 스켈레톤 카드 조정 */
+        @media (max-width: 768px) {
+            .skeleton-image {
+                height: 216px;
+            }
+            
+            .skeleton-content {
+                padding: 16px;
+            }
+        }
+    </style>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body style="background: var(--gray-50);">
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/logo4.png" alt="CNS Logo">
+                </a>
+                <a href="../index.html"><span class="company-name">씨앤에스(주)</span></a>
+            </div>
+            <div class="nav-group">
+                <nav class="nav">
+                    <div class="nav-dropdown">
+                        <a href="greeting.html" class="nav-link">회사소개</a>
+                        <div class="dropdown-menu">
+                            <a href="greeting.html" class="dropdown-link">인사말</a>
+                            <a href="business.html" class="dropdown-link">사업분야</a>
+                            <a href="location.html" class="dropdown-link">찾아오시는 길</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="services-construction.html" class="nav-link">HACCP 서비스</a>
+                        <div class="dropdown-menu">
+                            <a href="services-construction.html" class="dropdown-link">HACCP 공사</a>
+                            <a href="services-equipment.html" class="dropdown-link">HACCP 설비</a>
+                            <a href="services.html" class="dropdown-link">HACCP 컨설팅</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="cases.html" class="nav-link active">사업실적</a>
+                        <div class="dropdown-menu">
+                            <a href="cases.html" class="dropdown-link active">HACCP 공사실적</a>
+                            <a href="achievements.html" class="dropdown-link">전체 추진실적</a>
+                        </div>
+                    </div>
+                </nav>
+                <a href="contact.html" class="nav-cta-button">고객문의</a>
+            </div>
+            
+            <!-- 모바일 네비게이션 토글 버튼 -->
+            <button class="mobile-nav-toggle" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- 관리자 비밀 아이콘 -->
+            <button class="admin-secret-btn" onclick="checkAdminAccess()" title="관리자">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5L12 1z"/>
+                    <path d="M12 7v5l3 3"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- 모바일 네비게이션 오버레이 -->
+    <div class="mobile-nav-overlay"></div>
+    
+    <!-- 모바일 네비게이션 메뉴 -->
+    <div class="mobile-nav-menu">
+        <div class="mobile-nav-header">
+            <span class="company-name">씨앤에스(주)</span>
+            <button class="mobile-nav-close" aria-label="메뉴 닫기">&times;</button>
+        </div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">회사소개</div>
+                <a href="greeting.html" class="mobile-nav-link">인사말</a>
+                <a href="business.html" class="mobile-nav-link">사업분야</a>
+                <a href="location.html" class="mobile-nav-link">찾아오시는 길</a>
+            </div>
+            
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">HACCP 서비스</div>
+                <a href="services-construction.html" class="mobile-nav-link">HACCP 공사</a>
+                <a href="services-equipment.html" class="mobile-nav-link">HACCP 설비</a>
+                <a href="services.html" class="mobile-nav-link">HACCP 컨설팅</a>
+            </div>
+            
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">사업실적</div>
+                <a href="cases.html" class="mobile-nav-link">HACCP 공사실적</a>
+                <a href="achievements.html" class="mobile-nav-link">전체 추진실적</a>
+            </div>
+        </div>
+        <a href="contact.html" class="mobile-nav-cta">고객문의</a>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+        <div class="page cases-page">
+            <div class="container">
+                <div class="page-header">
+                    <div class="page-header-content">
+                        <h1 class="page-title">HACCP 공사실적</h1>
+                        <div class="page-description">
+                            <div class="divider-line"></div>
+                            <p class="page-subtitle">
+                                씨앤에스(주)는 업종과 규모에 관계없이 최고의 HACCP 솔루션을 제공합니다.<br>
+                                200개가 넘는, 다양한 사업 실적이 우리의 전문성을 증명합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 필터 안내 문구 -->
+                <div class="filter-guide">
+                    <p style="font-family: 'Paperlogy-8ExtraBold', sans-serif; font-weight: 600; font-size: 30px;">
+                        우리 업종과 비슷한<br class="mobile-break"> 성공사례를 확인해보세요
+                    </p>
+                </div>
+
+                <!-- 필터 버튼 -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">전체보기</button>
+                    <button class="filter-btn" data-filter="식육포장처리업">식육포장처리업</button>
+                    <button class="filter-btn" data-filter="수산물">수산물</button>
+                    <button class="filter-btn" data-filter="식육가공업">식육가공업</button>
+                    <button class="filter-btn" data-filter="빵류, 과자류">빵, 과자류</button>
+                    <button class="filter-btn" data-filter="김치류">김치류</button>
+                    <button class="filter-btn" data-filter="기타">기타</button>
+                </div>
+
+                <!-- 카드 그리드 -->
+                <div class="case-grid">
+                    <!-- 🎯 첫 번째 줄 스켈레톤 로딩 카드들 (JS로 실제 데이터 로딩 전까지 표시) -->
+                    <div class="case-card-skeleton" data-skeleton="1">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-industry"></div>
+                            <div class="skeleton-duration"></div>
+                        </div>
+                    </div>
+                    <div class="case-card-skeleton" data-skeleton="2">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-industry"></div>
+                            <div class="skeleton-duration"></div>
+                        </div>
+                    </div>
+                    <div class="case-card-skeleton" data-skeleton="3">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-industry"></div>
+                            <div class="skeleton-duration"></div>
+                        </div>
+                    </div>
+                    <!-- 실제 데이터는 JS로 주입되고 스켈레톤은 제거됩니다 -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 팝업(모달) -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-gallery">
+                <div class="modal-main-image">
+                    <img src="" alt="Main project image">
+                </div>
+            </div>
+            <div class="modal-info">
+                <h2 id="modal-title">프로젝트 이름</h2>
+                <p class="location" id="modal-location">추진 지역</p>
+                <div class="info-section">
+                    <h3>프로젝트 개요</h3>
+                    <p id="modal-summary">프로젝트에 대한 간략한 설명입니다.</p>
+                </div>
+                <div class="info-section">
+                    <h3>작업 기간</h3>
+                    <p id="modal-duration">3개월</p>
+                </div>
+                <div class="info-section">
+                    <h3>HACCP 인증범위</h3>
+                    <div id="modal-tags" style="margin-top: 8px;">
+                        <!-- 인증범위가 여기에 동적으로 추가됩니다. -->
+                    </div>
+                </div>
+            </div>
+            <button class="modal-close-btn">&times;</button>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/logo4.png" alt="CNS Logo">
+                </div>
+                <div class="footer-info">
+                    <p>
+                        <strong>상호</strong> 씨앤에스(주)
+                    </p>
+                    <p>
+                        <strong>사업자등록번호</strong> 817-88-02063
+                    </p>
+                    <p>
+                        <strong>주소</strong> 서울 영등포구 양산로 57-5, 1006호(양평동3가, 이노플렉스)
+                    </p>
+                    <p>
+                        <strong>대표번호</strong> 02-6675-0751~5
+                    </p>
+                    <p>
+                        <strong>FAX</strong> 02-6675-0756
+                    </p>
+                    <p>
+                        <strong>E-mail</strong> cns0751@hanmail.net
+                    </p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                Copyright(c) 2025 CNS. All rights reserved
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 관리자 비밀번호 모달 -->
+    <div class="admin-password-overlay" id="adminPasswordModal">
+        <div class="admin-password-modal">
+            <div class="admin-password-header">
+                <h3>관리자 인증</h3>
+                <button onclick="closePasswordModal()" class="password-close-btn">&times;</button>
+            </div>
+            <div class="admin-password-body">
+                <div class="password-input-group">
+                    <label for="adminPassword">비밀번호</label>
+                    <input type="password" id="adminPassword" placeholder="관리자 비밀번호를 입력하세요" autocomplete="off">
+                </div>
+                <div class="password-actions">
+                    <button onclick="closePasswordModal()" class="btn-cancel">취소</button>
+                    <button onclick="verifyAdminPassword()" class="btn-login">로그인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/supabaseClient.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html> 

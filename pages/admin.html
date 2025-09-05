@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 대시보드 - CNS HACCP</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin-premium.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- 사이드바 -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/logo4.png" alt="CNS" class="sidebar-logo-img">
+            <div class="sidebar-brand">
+                <span>관리자 페이지</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <span class="nav-section-title">시스템</span>
+                <ul>
+                    <li class="nav-item">
+                        <a href="../pages/cases.html" class="nav-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                            <span>홈페이지로 돌아가기</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="admin.html" class="nav-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 5h18M6 12h12M10 19h4"/>
+                            </svg>
+                            <span>사업실적 관리</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="admin-achievements.html" class="nav-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10,9 9,9 8,9"/>
+                            </svg>
+                            <span>추진실적 관리</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="openPasswordChangeModal()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5L12 1z"/>
+                                <path d="M12 11v5"/>
+                                <path d="M12 8v.01"/>
+                            </svg>
+                            <span>비밀번호 변경</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">관리자</span>
+                    <span class="user-role">시스템 관리자</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="admin-main-content">
+        <!-- 탑바 -->
+        <header class="admin-topbar">
+            <div class="topbar-left">
+                <h1 class="page-title">공사실적 관리</h1>
+                <div class="breadcrumb">
+                    <span>대시보드</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"/>
+                    </svg>
+                    <span>공사실적</span>
+                </div>
+            </div>
+            
+            <div class="topbar-right">
+                <div class="stats-summary">
+                    <div class="stat-item">
+                        <span class="stat-label">총 공사실적</span>
+                        <span class="stat-value" id="totalCases">12</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">이번 년도</span>
+                        <span class="stat-value" id="thisYearCases">0</span>
+                    </div>
+                </div>
+                
+                
+
+                <button class="primary-action-btn" onclick="openAddModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    새 실적 추가
+                </button>
+            </div>
+        </header>
+
+        <!-- 필터 및 검색 -->
+        <section class="admin-filters">
+            <div class="filter-group">
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" placeholder="회사명, 제품, 위치로 검색..." class="search-input">
+                </div>
+                
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;">
+                            <path d="M3 5h18M6 12h12M10 19h4"/>
+                        </svg>
+                        전체
+                    </button>
+                    <button class="filter-tab" data-filter="construction">공사</button>
+                    <button class="filter-tab" data-filter="equipment">설비</button>
+                    <button class="filter-tab" data-filter="consulting">컨설팅</button>
+                </div>
+                
+                
+            </div>
+        </section>
+
+        <!-- 사업실적 그리드 -->
+        <section class="cases-section">
+            <div class="cases-grid" id="premiumCasesGrid">
+                <!-- 동적으로 생성됨 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 비밀번호 변경 모달 -->
+    <div class="premium-modal-overlay" id="passwordChangeModal">
+        <div class="premium-modal">
+            <div class="premium-modal-header">
+                <div class="modal-title-section">
+                    <h2>비밀번호 변경</h2>
+                    <p class="modal-subtitle">현재 비밀번호와 새 비밀번호를 입력하세요</p>
+                </div>
+                <button onclick="closePasswordChangeModal()" class="premium-close-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="premium-modal-body">
+                <form id="passwordChangeForm" class="premium-form">
+                    <div class="form-section">
+                        <div class="form-grid">
+                            <div class="form-field full-width">
+                                <label class="field-label">현재 비밀번호</label>
+                                <input type="password" name="current" placeholder="현재 비밀번호" class="premium-input" required>
+                            </div>
+                            <div class="form-field full-width">
+                                <label class="field-label">새 비밀번호</label>
+                                <input type="password" name="next" placeholder="새 비밀번호" class="premium-input" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" onclick="closePasswordChangeModal()" class="btn-secondary">취소</button>
+                        <button type="submit" class="btn-primary">변경</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 프리미엄 추가/수정 모달 -->
+    <div class="premium-modal-overlay" id="premiumEditModal">
+        <div class="premium-modal">
+            <div class="premium-modal-header">
+                <div class="modal-title-section">
+                    <h2 id="premiumModalTitle">새 사업실적 추가</h2>
+                    <p class="modal-subtitle">프로젝트 정보를 입력해주세요</p>
+                </div>
+                <button onclick="closePremiumModal()" class="premium-close-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="premium-modal-body">
+                <form id="premiumCaseForm" class="premium-form">
+                    <!-- 기본 정보 섹션 -->
+                    <div class="form-section">
+                        <h3 class="section-title">기본 정보</h3>
+                        <div class="form-grid">
+                            <div class="form-field full-width">
+                                <label class="field-label">회사명 *</label>
+                                <input type="text" name="company" placeholder="㈜회사명" class="premium-input" required>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">업종/제품 *</label>
+                                <input type="text" name="product" placeholder="식육포장처리업" class="premium-input" required>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">위치 *</label>
+                                <input type="text" name="location" placeholder="경기 성남" class="premium-input" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label class="field-label">프로젝트 날짜 *</label>
+                                <input type="text" name="year" placeholder="2024-03" class="premium-input" required>
+                                <span class="field-hint">YYYY-MM 형식으로 입력</span>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">진행 기간 *</label>
+                                <input type="text" name="duration" placeholder="3개월" class="premium-input" required>
+                                <span class="field-hint">예: 2주, 1개월, 6개월</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 서비스 섹션 -->
+                    <div class="form-section">
+                        <h3 class="section-title">서비스</h3>
+                        <div class="form-grid">
+                            <div class="form-field full-width">
+                                <label class="field-label">제공 서비스 *</label>
+                                <div class="service-tags">
+                                    <label class="tag-option">
+                                        <input type="checkbox" name="tags" value="construction">
+                                        <span class="tag-label construction">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M9 11l3 3l8-8"/>
+                                            </svg>
+                                            HACCP 공사
+                                        </span>
+                                    </label>
+                                    
+                                    <label class="tag-option">
+                                        <input type="checkbox" name="tags" value="equipment">
+                                        <span class="tag-label equipment">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M9 11l3 3l8-8"/>
+                                            </svg>
+                                            HACCP 설비
+                                        </span>
+                                    </label>
+                                    
+                                    <label class="tag-option">
+                                        <input type="checkbox" name="tags" value="consulting">
+                                        <span class="tag-label consulting">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M9 11l3 3l8-8"/>
+                                            </svg>
+                                            HACCP 컨설팅
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 미디어 및 설명 섹션 -->
+                    <div class="form-section">
+                        <h3 class="section-title">이미지 및 설명</h3>
+                        <div class="form-grid">
+                            <div class="form-field full-width">
+                                <label class="field-label">이미지 파일</label>
+                                <input type="file" name="imageFiles" accept="image/*" multiple class="premium-input">
+                                <span class="field-hint">수정 시 이미지를 다시 업로드하지 않아도 됩니다. 새 이미지를 추가하려면 선택하세요.</span>
+                                <div id="currentImagesPreview" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;"></div>
+                                <div id="newImagesPreview" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;"></div>
+                            </div>
+                            
+                            <div class="form-field full-width">
+                                <label class="field-label">프로젝트 요약 *</label>
+                                <textarea name="summary" rows="4" placeholder="프로젝트의 주요 내용과 성과를 요약해서 설명해주세요..." class="premium-textarea" required></textarea>
+                                <span class="field-hint">고객이 볼 수 있는 프로젝트 소개 내용</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 액션 버튼 -->
+                    <div class="form-actions">
+                        <button type="button" onclick="closePremiumModal()" class="btn-secondary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                            취소
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                            </svg>
+                            저장하기
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 프리미엄 삭제 확인 모달 -->
+    <div class="premium-modal-overlay" id="premiumDeleteModal">
+        <div class="premium-modal delete-modal">
+            <div class="premium-modal-header">
+                <div class="modal-title-section">
+                    <h2>실적 삭제 확인</h2>
+                    <p class="modal-subtitle danger">이 작업은 되돌릴 수 없습니다</p>
+                </div>
+            </div>
+            
+            <div class="premium-modal-body">
+                <div class="delete-confirmation">
+                    <div class="warning-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <div class="delete-content">
+                        <h3>정말로 삭제하시겠습니까?</h3>
+                        <p>다음 사업실적이 영구적으로 삭제됩니다:</p>
+                        <div class="delete-target" id="deleteTargetInfo">
+                            <!-- 동적으로 생성됨 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" onclick="closePremiumDeleteModal()" class="btn-secondary">취소</button>
+                    <button type="button" onclick="confirmPremiumDelete()" class="btn-danger">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3,6 5,6 21,6"/>
+                            <path d="M19,6l-2,14H7L5,6"/>
+                            <path d="M10,11v6"/>
+                            <path d="M14,11v6"/>
+                        </svg>
+                        삭제하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 이미지 프리뷰 모달 -->
+    <div class="premium-modal-overlay" id="imagePreviewModal">
+        <div class="premium-modal preview-modal">
+            <div class="premium-modal-header preview-header">
+                <div class="modal-title-section">
+                    <h2 id="imagePreviewTitle"> </h2>
+                    <p class="modal-subtitle" id="imagePreviewSub">이미지 보기</p>
+                </div>
+                <button onclick="closeImagePreview()" class="premium-close-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="premium-modal-body preview-body">
+                <img id="imagePreviewTarget" class="preview-image loading" src="" alt="preview" decoding="async" fetchpriority="high">
+                <div class="preview-controls">
+                    <button class="btn-secondary" onclick="prevPreviewImage()">이전</button>
+                    <span id="previewCounter" class="preview-counter">1 / 1</span>
+                    <button class="btn-secondary" onclick="nextPreviewImage()">다음</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 이미지 압축 설정 모달 -->
+    <div class="premium-modal-overlay" id="compressionSettingsModal">
+        <div class="premium-modal">
+            <div class="premium-modal-header">
+                <div class="modal-title-section">
+                    <h2>이미지 압축 설정</h2>
+                    <p class="modal-subtitle">이미지 업로드 시 자동 압축 옵션을 설정하세요</p>
+                </div>
+                <button onclick="closeCompressionSettingsModal()" class="premium-close-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="premium-modal-body">
+                <form id="compressionSettingsForm" onsubmit="saveCompressionSettings(); return false;">
+                    <div class="form-group">
+                        <label for="compressionQuality">압축 품질</label>
+                        <div class="range-input-group">
+                            <input type="range" id="compressionQuality" min="10" max="100" value="80" class="range-input">
+                            <span class="range-value" id="compressionQualityValue">80%</span>
+                        </div>
+                        <p class="form-help">높을수록 품질이 좋지만 파일 크기가 커집니다</p>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="maxWidth">최대 너비 (px)</label>
+                            <input type="number" id="maxWidth" min="100" max="4000" value="1920" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxHeight">최대 높이 (px)</label>
+                            <input type="number" id="maxHeight" min="100" max="4000" value="1080" class="form-input">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="maxFileSize">최대 파일 크기 (MB)</label>
+                        <input type="number" id="maxFileSize" min="0.1" max="10" step="0.1" value="1" class="form-input">
+                        <p class="form-help">이 크기를 초과하면 추가 압축이 적용됩니다</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="outputFormat">출력 형식</label>
+                        <select id="outputFormat" class="form-select">
+                            <option value="jpeg">JPEG (권장)</option>
+                            <option value="png">PNG (투명도 지원)</option>
+                            <option value="webp">WebP (최신, 압축률 높음)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" onclick="closeCompressionSettingsModal()" class="btn-secondary">취소</button>
+                        <button type="submit" class="btn-primary">저장</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 압축 진행률 표시 -->
+    <div class="compression-progress" id="compressionProgress" style="display: none;">
+        <div class="progress-header">
+            <h3>이미지 압축 진행률</h3>
+            <button onclick="hideCompressionProgress()" class="progress-close-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="compressionProgressBar"></div>
+        </div>
+        <div class="progress-text" id="compressionProgressText">압축 준비 중...</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/supabaseClient.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/admin-premium.js"></script>
+</body>
+</html> 

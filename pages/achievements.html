@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사업실적 - 추진실적 - CNS HACCP Total Solution</title>
+    <meta name="description" content="CNS의 HACCP 사업실적과 추진실적을 확인하세요. 컨설팅,설비, 공사 등 다양한 성과를 소개합니다.">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Paperlogy extra bold for navigation company name */
+        @font-face {
+            font-family: 'Paperlogy-8ExtraBold';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        /* 추진실적 페이지 전용 스타일 - 강제 적용 */
+        .achievements-summary {
+            margin-bottom: 30px !important;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .achievements-summary .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .achievements-summary .stat-item {
+            text-align: center;
+            padding: 20px 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .achievements-summary .stat-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #00060c;
+        }
+        
+        .achievements-summary .stat-label {
+            font-size: 1.1rem;
+            color: #209146;
+            font-weight: 300;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Paperlogy-8ExtraBold', sans-serif;
+        }
+        
+        /* 구체적인 클래스명으로 격리 */
+        .achievements-summary .stat-number.achievements-total,
+        .achievements-summary .stat-number.achievements-consulting,
+        .achievements-summary .stat-number.achievements-equipment,
+        .achievements-summary .stat-number.achievements-construction {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Paperlogy-8ExtraBold', sans-serif;
+            text-shadow: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .achievements-summary .stat-number.achievements-total.animate,
+        .achievements-summary .stat-number.achievements-consulting.animate,
+        .achievements-summary .stat-number.achievements-equipment.animate,
+        .achievements-summary .stat-number.achievements-construction.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* achievements 페이지 전용 체크 표시 스타일 - 격리 */
+        .achievements-page .service-check {
+            text-align: center;
+            font-weight: 600;
+            color: #16a34a;
+        }
+        
+        .achievements-page .service-check.has-service {
+            color: #16a34a;
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .achievements-page .service-empty {
+            color: #6b7280;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+
+        
+        /* 표 아래쪽 margin 추가 */
+        .table-wrapper {
+            margin-bottom: 60px !important;
+        }
+        
+        /* CTA 섹션과의 간격 조정 */
+        .cta-section,
+        .cta-section-white {
+            margin-top: -70px !important; /* pagination과 CTA 섹션 사이 갭 축소 */
+        }
+        
+        /* 🎯 모바일 통계 요약 섹션 최적화 */
+        @media (max-width: 768px) {
+            .achievements-summary {
+                margin-bottom: 25px !important;
+                padding: 20px 15px !important;
+                border-radius: 10px !important;
+            }
+            
+            .achievements-summary .summary-stats {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important; /* 2열 그리드로 변경 */
+                grid-template-rows: 1fr 1fr !important; /* 2행 그리드로 변경 */
+                gap: 12px !important;
+                max-width: 100% !important;
+            }
+            
+            .achievements-summary .stat-item {
+                padding: 15px 10px !important;
+                border-radius: 6px !important;
+                background: white !important;
+                border: 1px solid #e9ecef !important;
+                text-align: center !important;
+                min-height: auto !important;
+            }
+            
+            .achievements-summary .stat-label {
+                font-size: 0.9rem !important;
+                margin-bottom: 8px !important;
+                line-height: 1.3 !important;
+                word-break: keep-all !important;
+                letter-spacing: 0.3px !important;
+            }
+            
+            .achievements-summary .stat-number.achievements-total,
+            .achievements-summary .stat-number.achievements-consulting,
+            .achievements-summary .stat-number.achievements-equipment,
+            .achievements-summary .stat-number.achievements-construction {
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
+                margin-top: 5px !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 통계 요약 섹션 최적화 */
+        @media (max-width: 480px) {
+            .achievements-summary {
+                margin-bottom: 20px !important;
+                padding: 15px 12px !important;
+                border-radius: 8px !important;
+            }
+            
+            .achievements-summary .summary-stats {
+                gap: 10px !important;
+            }
+            
+            .achievements-summary .stat-item {
+                padding: 12px 8px !important;
+                border-radius: 5px !important;
+            }
+            
+            .achievements-summary .stat-label {
+                font-size: 0.8rem !important;
+                margin-bottom: 6px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .achievements-summary .stat-number.achievements-total,
+            .achievements-summary .stat-number.achievements-consulting,
+            .achievements-summary .stat-number.achievements-equipment,
+            .achievements-summary .stat-number.achievements-construction {
+                font-size: 1.6rem !important;
+                line-height: 1.1 !important;
+                margin-top: 3px !important;
+            }
+        }
+        
+        /* 모바일 전용 줄바꿈 기본 설정 */
+        .mobile-break {
+            display: none; /* 기본적으로 숨김 (데스크탑) */
+        }
+        
+        /* 🎯 모바일 테이블 컬럼 숨김 최적화 */
+        @media (max-width: 768px) {
+            .achievements-table-container {
+                margin: 0 -10px !important;
+                max-width: none !important;
+            }
+            
+            .table-wrapper {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                border-radius: 8px !important;
+                margin-bottom: 25px !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+            }
+            
+            .achievements-table {
+                min-width: 100% !important;
+                font-size: 13px !important;
+            }
+            
+            /* 추진년도와 추진지역 컬럼 숨기기 */
+            .achievements-table th:nth-child(1), /* 추진년도 */
+            .achievements-table td:nth-child(1),
+            .achievements-table th:nth-child(4), /* 추진지역 */
+            .achievements-table td:nth-child(4) {
+                display: none !important;
+            }
+            
+            .achievements-table th {
+                padding: 12px 8px !important;
+                font-size: 13px !important;
+                font-weight: 600 !important;
+                line-height: 1.3 !important;
+                white-space: nowrap !important;
+                word-break: keep-all !important;
+            }
+            
+            .achievements-table td {
+                padding: 10px 8px !important;
+                font-size: 12px !important;
+                font-weight: 500 !important;
+                line-height: 1.4 !important;
+                white-space: nowrap !important;
+                word-break: keep-all !important;
+            }
+            
+            /* 남은 컬럼들의 너비 최적화 */
+            .achievements-table th:nth-child(2), /* 회사명 */
+            .achievements-table td:nth-child(2) {
+                width: 32% !important;
+                min-width: 110px !important;
+                text-align: center !important;
+            }
+            
+            .achievements-table th:nth-child(3), /* 업종 */
+            .achievements-table td:nth-child(3) {
+                width: 30% !important;
+                min-width: 100px !important;
+                text-align: center !important;
+            }
+            
+            .achievements-table th:nth-child(5), /* HACCP 컨설팅 */
+            .achievements-table th:nth-child(6), /* HACCP 설비 */
+            .achievements-table th:nth-child(7), /* HACCP 공사 */
+            .achievements-table td:nth-child(5),
+            .achievements-table td:nth-child(6),
+            .achievements-table td:nth-child(7) {
+                width: 13.33% !important; /* 40% / 3 = 약 13.33% */
+                min-width: 65px !important;
+                text-align: center !important;
+            }
+            
+            /* 서비스 체크 표시 모바일 최적화 */
+            .achievements-page .service-check.has-service {
+                font-size: 28px !important;
+                font-weight: 700 !important;
+                color: #16a34a !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 테이블 최적화 */
+        @media (max-width: 480px) {
+            .achievements-table-container {
+                margin: 0 -15px !important;
+            }
+            
+            .table-wrapper {
+                border-radius: 6px !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .achievements-table {
+                font-size: 12px !important;
+            }
+            
+            .achievements-table th {
+                padding: 10px 6px !important;
+                font-size: 12px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .achievements-table td {
+                padding: 8px 6px !important;
+                font-size: 11px !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* 작은 모바일에서 컬럼 너비 조정 */
+            .achievements-table th:nth-child(2),
+            .achievements-table td:nth-child(2) {
+                width: 31% !important;
+                min-width: 95px !important;
+                text-align: center !important;
+            }
+            
+            .achievements-table th:nth-child(3),
+            .achievements-table td:nth-child(3) {
+                width: 30% !important;
+                min-width: 80px !important;
+                text-align: center !important;
+            }
+            
+            .achievements-table th:nth-child(5),
+            .achievements-table th:nth-child(6),
+            .achievements-table th:nth-child(7),
+            .achievements-table td:nth-child(5),
+            .achievements-table td:nth-child(6),
+            .achievements-table td:nth-child(7) {
+                width: 11.67% !important;
+                min-width: 55px !important;
+            }
+            
+            .achievements-page .service-check.has-service {
+                font-size: 28px !important;
+                font-weight: 700 !important;
+                color: #16a34a !important;
+            }
+        }
+
+        /* 🎯 모바일 CTA 섹션 최적화 */
+        @media (max-width: 768px) {
+            .cta-section-white {
+                padding: 35px 20px !important;
+                margin: -25px 0 55px 0 !important;
+            }
+            
+            .cta-title {
+                font-size: 30px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 15px !important;
+                text-align: center !important;
+                font-weight: 700 !important;
+                color: #1a1a1a !important;
+                word-break: keep-all;
+            }
+            
+            /* 모바일에서 줄바꿈 표시 */
+            .mobile-break {
+                display: block !important;
+            }
+            
+            .cta-description {
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+                text-align: center !important;
+                word-break: keep-all;
+                margin-bottom: 25px !important;
+                color: #555 !important;
+                padding: 0 10px !important;
+            }
+            
+            .cta-buttons {
+                flex-direction: column !important;
+                gap: 15px !important;
+                align-items: center !important;
+                max-width: 350px !important;
+                margin: 0 auto !important;
+            }
+            
+            .btn {
+                width: 100% !important;
+                max-width: 320px !important;
+                padding: 16px 24px !important;
+                font-size: 18px !important;
+                font-weight: 600 !important;
+                text-align: center !important;
+                border-radius: 8px !important;
+                transition: all 0.3s ease !important;
+                letter-spacing: 0.5px !important;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                background: #ffffff !important;
+                color: #1a1a1a !important;
+                border: 2px solid #e9ecef !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+            }
+            
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+                border-color: #1a1a1a !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 CTA 섹션 최적화 */
+        @media (max-width: 480px) {
+            .cta-section-white {
+                padding: 25px 15px !important;
+                margin: -20px 0 45px 0 !important;
+            }
+            
+            .cta-title {
+                font-size: 28px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 12px !important;
+                font-weight: 700 !important;
+                padding: 0 5px !important;
+            }
+            
+            .cta-description {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 20px !important;
+                padding: 0 8px !important;
+            }
+            
+            .cta-buttons {
+                max-width: 300px !important;
+                gap: 12px !important;
+            }
+            
+            .btn {
+                max-width: 280px !important;
+                padding: 14px 20px !important;
+                font-size: 16px !important;
+                font-weight: 600 !important;
+                border-radius: 6px !important;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                background: #ffffff !important;
+                color: #1a1a1a !important;
+                border: 2px solid #e9ecef !important;
+                box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1) !important;
+            }
+            
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                transform: translateY(-1px) !important;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+                border-color: #1a1a1a !important;
+            }
+        }
+        
+        /* Pagination 스타일 */
+        .pagination-container {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .pagination {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .pagination-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            color: #333;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .pagination-btn:hover:not(:disabled) {
+            background: #f8f9fa;
+            border-color: #007bff;
+            color: #007bff;
+        }
+        
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .pagination-numbers {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .pagination-number {
+            min-width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            background: white;
+            color: #333;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .pagination-number:hover {
+            background: #f8f9fa;
+            border-color: #007bff;
+            color: #007bff;
+        }
+        
+        .pagination-number.active {
+            background: #007bff;
+            border-color: #007bff;
+            color: white;
+        }
+        
+        .pagination-info {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* 🎯 모바일 Pagination 최적화 */
+        @media (max-width: 768px) {
+            .pagination-container {
+                flex-direction: column;
+                text-align: center;
+                margin: 20px 0 !important;
+                gap: 12px !important;
+            }
+            
+            .pagination {
+                order: 2;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 6px !important;
+                max-width: 100% !important;
+                overflow: hidden !important;
+            }
+            
+            .pagination-btn {
+                padding: 8px 12px !important;
+                font-size: 13px !important;
+                border-radius: 5px !important;
+                min-width: auto !important;
+            }
+            
+            .pagination-numbers {
+                gap: 3px !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                max-width: 250px !important;
+            }
+            
+            .pagination-number {
+                min-width: 32px !important;
+                height: 32px !important;
+                font-size: 13px !important;
+                border-radius: 5px !important;
+            }
+            
+            .pagination-info {
+                order: 1;
+                font-size: 13px !important;
+                color: #666 !important;
+            }
+        }
+
+        /* 🎯 작은 모바일 Pagination 최적화 */
+        @media (max-width: 480px) {
+            .pagination-container {
+                margin: 15px 0 !important;
+                gap: 10px !important;
+            }
+            
+            .pagination {
+                gap: 4px !important;
+            }
+            
+            .pagination-btn {
+                padding: 6px 10px !important;
+                font-size: 12px !important;
+            }
+            
+            .pagination-numbers {
+                gap: 2px !important;
+                max-width: 200px !important;
+            }
+            
+            .pagination-number {
+                min-width: 28px !important;
+                height: 28px !important;
+                font-size: 12px !important;
+            }
+            
+            .pagination-info {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+</head>
+<body class="achievements-page">
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/logo4.png" alt="CNS Logo">
+                </a>
+                <a href="../index.html"><span class="company-name">씨앤에스(주)</span></a>
+            </div>
+
+            <div class="nav-group">
+                <nav class="nav">
+                    <div class="nav-dropdown">
+                        <a href="greeting.html" class="nav-link">회사소개</a>
+                        <div class="dropdown-menu">
+                            <a href="greeting.html" class="dropdown-link">인사말</a>
+                            <a href="business.html" class="dropdown-link">사업분야</a>
+                            <a href="location.html" class="dropdown-link">찾아오시는 길</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="services-construction.html" class="nav-link">HACCP 서비스</a>
+                        <div class="dropdown-menu">
+                            <a href="services-construction.html" class="dropdown-link">HACCP 공사</a>
+                            <a href="services-equipment.html" class="dropdown-link">HACCP 설비</a>
+                            <a href="services.html" class="dropdown-link">HACCP 컨설팅</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="cases.html" class="nav-link active">사업실적</a>
+                        <div class="dropdown-menu">
+                            <a href="cases.html" class="dropdown-link">HACCP 공사실적</a>
+                            <a href="achievements.html" class="dropdown-link active">전체 추진실적</a>
+                        </div>
+                    </div>
+                </nav>
+                <a href="contact.html" class="nav-cta-button">고객문의</a>
+            </div>
+            
+            <!-- 모바일 네비게이션 토글 버튼 -->
+            <button class="mobile-nav-toggle" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+        <div class="page">
+            <div class="container">
+                <div class="page-header">
+                    <div class="page-header-content">
+                        <h1 class="page-title">추진실적</h1>
+                        <div class="page-description">
+                            <div class="divider-line"></div>
+                            <p class="page-subtitle">
+                                신뢰할 수 있는 HACCP 전문 파트너,<br>씨앤에스(주)의 검증된 사업실적과 성과를 소개합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 추진실적 섹션 -->
+                <section class="about-section">
+                    <div class="section-content">
+                        <div class="achievements-table-container">
+                            <!-- 요약 통계를 표 위로 이동 -->
+                            <div class="achievements-summary">
+                                <div class="summary-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-label">총 추진 건수</div>
+                                        <div class="stat-number achievements-total" data-target="0">0건</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">HACCP 컨설팅</div>
+                                        <div class="stat-number achievements-consulting" data-target="0">0건</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">HACCP 위생설비</div>
+                                        <div class="stat-number achievements-equipment" data-target="0">0건</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">HACCP 공사</div>
+                                        <div class="stat-number achievements-construction" data-target="0">0건</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-wrapper">
+                                <table class="achievements-table" id="achievementsTable">
+                                    <thead>
+                                        <tr>
+                                            <th>추진년도</th>
+                                            <th>회사명</th>
+                                            <th>업종</th>
+                                            <th>추진지역</th>
+                                            <th>HACCP<br>컨설팅</th>
+                                            <th>HACCP<br>설비</th>
+                                            <th>HACCP<br>공사</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- 데이터는 JavaScript로 동적 생성됩니다 -->
+
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <div class="pagination-container">
+                                <div class="pagination">
+                                    <button class="pagination-btn" id="prevBtn" onclick="changePage(-1)">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="15,18 9,12 15,6"></polyline>
+                                        </svg>
+                                        이전
+                                    </button>
+                                    <div class="pagination-numbers" id="paginationNumbers"></div>
+                                    <button class="pagination-btn" id="nextBtn" onclick="changePage(1)">
+                                        다음
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9,18 15,12 9,6"></polyline>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="pagination-info">
+                                    <span id="pageInfo">1-20 of 60 항목</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section-white">
+        <div class="cta-content">
+            <h2 class="cta-title">검증된 '실적'으로<br class="mobile-break"> HACCP 인증을 성공하세요</h2>
+            <p class="cta-description">
+                성공적인 HACCP 추진 경험을 바탕으로<br>
+                귀사의 HACCP 인증 성공을 확실하게 보장합니다.
+            </p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">
+                    무료 상담 · 견적 문의
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <span class="btn btn-secondary" style="cursor: default;">
+                    02-6675-0751
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/logo4.png" alt="CNS Logo">
+                </div>
+                <div class="footer-info">
+                    <p>
+                        <strong>상호</strong> 씨앤에스(주)
+                    </p>
+                    <p>
+                        <strong>사업자등록번호</strong> 817-88-02063
+                    </p>
+                    <p>
+                        <strong>주소</strong> 서울 영등포구 양산로 57-5, 1006호(양평동3가, 이노플렉스)
+                    </p>
+                    <p>
+                        <strong>대표번호</strong> 02-6675-0751~5
+                    </p>
+                    <p>
+                        <strong>FAX</strong> 02-6675-0756
+                    </p>
+                    <p>
+                        <strong>E-mail</strong> cns0751@hanmail.net
+                    </p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                Copyright(c) 2025 CNS. All rights reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabaseClient.js"></script>
+    <script>
+        // 추진실적 데이터 동적 로딩
+        async function loadAchievementsData() {
+            const client = window.supabaseClient;
+            if (!client) {
+                console.error('Supabase 클라이언트가 로드되지 않았습니다.');
+                return Promise.resolve();
+            }
+            
+            try {
+                const { data, error } = await client
+                    .from('achievements')
+                    .select('*')
+                    .order('year_month', { ascending: false })
+                    .order('created_at', { ascending: false });
+                
+                if (error) {
+                    console.error('추진실적 데이터 로딩 오류:', error);
+                    return Promise.resolve();
+                }
+                
+                if (data && data.length > 0) {
+                    renderAchievementsTable(data);
+                    updateSummaryStats(data);
+                } else {
+                    // 데이터가 없을 때도 통계 초기화
+                    updateSummaryStats([]);
+                }
+                
+                return Promise.resolve();
+            } catch (err) {
+                console.error('추진실적 데이터 로딩 중 오류:', err);
+                return Promise.resolve();
+            }
+        }
+        
+        // 추진실적 테이블 렌더링
+        function renderAchievementsTable(achievements) {
+            const tbody = document.querySelector('#achievementsTable tbody');
+            if (!tbody) return;
+            
+            tbody.innerHTML = achievements.map(achievement => `
+                <tr>
+                    <td>${achievement.year_month}</td>
+                    <td>${achievement.company}</td>
+                    <td>${achievement.product}</td>
+                    <td>${achievement.location}</td>
+                    <td class="service-check ${achievement.consulting ? 'has-service' : 'no-service'}">${achievement.consulting ? '○' : '-'}</td>
+                    <td class="service-check ${achievement.equipment ? 'has-service' : 'no-service'}">${achievement.equipment ? '○' : '-'}</td>
+                    <td class="service-check ${achievement.construction ? 'has-service' : 'no-service'}">${achievement.construction ? '○' : '-'}</td>
+                </tr>
+            `).join('');
+        }
+        
+        // 요약 통계 업데이트
+        function updateSummaryStats(achievements) {
+            if (!achievements || achievements.length === 0) {
+                // 데이터가 없을 때 기본값 표시
+                updateStatDisplay(0, 0, 0, 0);
+                return;
+            }
+            
+            // 각 통계 항목별로 계산
+            const totalCount = achievements.length;
+            const consultingCount = achievements.filter(a => a.consulting).length;
+            const equipmentCount = achievements.filter(a => a.equipment).length;
+            const constructionCount = achievements.filter(a => a.construction).length;
+            
+            // 통계 표시 업데이트
+            updateStatDisplay(totalCount, consultingCount, equipmentCount, constructionCount);
+        }
+        
+        // 통계 표시 업데이트 함수
+        function updateStatDisplay(total, consulting, equipment, construction) {
+            // 각 통계 요소 찾기
+            const totalElement = document.querySelector('.achievements-total');
+            const consultingElement = document.querySelector('.achievements-consulting');
+            const equipmentElement = document.querySelector('.achievements-equipment');
+            const constructionElement = document.querySelector('.achievements-construction');
+            
+            if (totalElement) {
+                totalElement.setAttribute('data-target', total);
+                animateNumber(totalElement, 0, total, 1000);
+            }
+            
+            if (consultingElement) {
+                consultingElement.setAttribute('data-target', consulting);
+                animateNumber(consultingElement, 0, consulting, 1200);
+            }
+            
+            if (equipmentElement) {
+                equipmentElement.setAttribute('data-target', equipment);
+                animateNumber(equipmentElement, 0, equipment, 1400);
+            }
+            
+            if (constructionElement) {
+                constructionElement.setAttribute('data-target', construction);
+                animateNumber(constructionElement, 0, construction, 1600);
+            }
+        }
+        
+        // 페이지 로드 시 데이터 로딩
+        document.addEventListener('DOMContentLoaded', function() {
+            // 초기 통계 표시 (로딩 중임을 나타냄)
+            updateStatDisplay(0, 0, 0, 0);
+            
+            loadAchievementsData().then(() => {
+                // 데이터 로딩 완료 후 페이지네이션 초기화
+                setTimeout(() => {
+                    initializePagination();
+                }, 500);
+            });
+        });
+        
+        // 윈도우 리사이즈 시 페이지네이션 재조정
+        window.addEventListener('resize', function() {
+            if (allRows.length > 0) {
+                const oldItemsPerPage = itemsPerPage;
+                setItemsPerPage();
+                
+                // itemsPerPage가 변경되었을 때만 페이지네이션 재계산
+                if (oldItemsPerPage !== itemsPerPage) {
+                    // 현재 페이지의 첫 번째 아이템 인덱스 유지
+                    const currentFirstItemIndex = (currentPage - 1) * oldItemsPerPage;
+                    const newPage = Math.floor(currentFirstItemIndex / itemsPerPage) + 1;
+                    currentPage = Math.max(1, newPage);
+                    
+                    showPage(currentPage, false);
+                    updatePaginationControls();
+                }
+            }
+        });
+        
+        // 기존 페이지네이션 코드는 유지하되, 데이터 로딩 후 초기화
+        let allRows = [];
+        let currentPage = 1;
+        let itemsPerPage = 18; // 기본값
+        let totalItems = 0;
+        
+        // 모바일에서 itemsPerPage 설정
+        function setItemsPerPage() {
+            if (window.innerWidth <= 768) {
+                itemsPerPage = 10; // 모바일에서는 10개씩
+            } else {
+                itemsPerPage = 18; // 데스크탑에서는 18개씩
+            }
+        }
+        
+        function initializePagination() {
+            setItemsPerPage(); // 화면 크기에 따라 itemsPerPage 설정
+            const table = document.getElementById('achievementsTable');
+            const tbody = table.querySelector('tbody');
+            allRows = Array.from(tbody.querySelectorAll('tr'));
+            totalItems = allRows.length;
+            
+            if (totalItems > 0) {
+                showPage(1, false);
+                updatePaginationControls();
+            }
+        }
+        
+        function showPage(page, shouldScroll = false) {
+            const table = document.getElementById('achievementsTable');
+            const tbody = table.querySelector('tbody');
+            
+            // 모든 행 숨기기
+            allRows.forEach(row => {
+                row.style.display = 'none';
+            });
+            
+            // 현재 페이지에 해당하는 행만 표시
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const currentRows = allRows.slice(startIndex, endIndex);
+            
+            currentRows.forEach(row => {
+                row.style.display = '';
+            });
+            
+            currentPage = page;
+            updatePageInfo();
+            updatePaginationControls();
+            
+            // 페이지네이션 컨트롤 클릭 시에만 스크롤
+            if (shouldScroll) {
+                setTimeout(() => {
+                    // 모바일과 데스크탑에서 다른 스크롤 위치 적용
+                    const isMobile = window.innerWidth <= 768;
+                    const scrollTop = isMobile ? 430 : 327; // 모바일에서는 조금 더 아래로
+                    
+                    window.scrollTo({
+                        top: scrollTop,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+        
+        function updatePaginationControls() {
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            const paginationNumbers = document.getElementById('paginationNumbers');
+            
+            // 페이지 번호 버튼 생성 (스마트 페이지네이션)
+            paginationNumbers.innerHTML = '';
+            
+            // 모바일에서는 최대 5개의 페이지 번호만 표시
+            const isMobile = window.innerWidth <= 768;
+            const maxVisiblePages = isMobile ? 5 : 10;
+            
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            // 끝 페이지가 총 페이지보다 작을 때 시작 페이지 조정
+            if (endPage - startPage + 1 < maxVisiblePages) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            // 첫 페이지 추가 (시작이 1이 아닐 때)
+            if (startPage > 1) {
+                const firstBtn = document.createElement('button');
+                firstBtn.className = 'pagination-number';
+                firstBtn.textContent = '1';
+                firstBtn.onclick = () => showPage(1, true);
+                paginationNumbers.appendChild(firstBtn);
+                
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '0 8px';
+                    ellipsis.style.color = '#999';
+                    paginationNumbers.appendChild(ellipsis);
+                }
+            }
+            
+            // 중간 페이지들 추가
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-number';
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => showPage(i, true);
+                
+                if (i === currentPage) {
+                    pageBtn.classList.add('active');
+                }
+                
+                paginationNumbers.appendChild(pageBtn);
+            }
+            
+            // 마지막 페이지 추가 (끝이 총 페이지가 아닐 때)
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.padding = '0 8px';
+                    ellipsis.style.color = '#999';
+                    paginationNumbers.appendChild(ellipsis);
+                }
+                
+                const lastBtn = document.createElement('button');
+                lastBtn.className = 'pagination-number';
+                lastBtn.textContent = totalPages;
+                lastBtn.onclick = () => showPage(totalPages, true);
+                paginationNumbers.appendChild(lastBtn);
+            }
+            
+            // 이전/다음 버튼 상태 업데이트
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            if (prevBtn) prevBtn.disabled = currentPage === 1;
+            if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+        }
+        
+        function changePage(direction) {
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            const newPage = currentPage + direction;
+            
+            if (newPage >= 1 && newPage <= totalPages) {
+                showPage(newPage, true);
+            }
+        }
+        
+        function updatePageInfo() {
+            const startItem = (currentPage - 1) * itemsPerPage + 1;
+            const endItem = Math.min(currentPage * itemsPerPage, totalItems);
+            const pageInfo = document.getElementById('pageInfo');
+            if (pageInfo) {
+                pageInfo.textContent = `${startItem}-${endItem} of ${totalItems} 항목`;
+            }
+        }
+        
+        // 숫자 애니메이션 함수
+        function animateNumber(element, start, end, duration) {
+            if (!element) return;
+            
+            // 애니메이션 시작 시 opacity와 transform 초기화
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+            element.classList.add('animate');
+            
+            const startTime = performance.now();
+            const difference = end - start;
+            
+            function updateNumber(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // easeOutQuart 이징 함수
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const current = start + (difference * easeOutQuart);
+                
+                element.textContent = Math.floor(current) + '건';
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                } else {
+                    // 애니메이션 완료 후 최종값 설정
+                    element.textContent = end + '건';
+                }
+            }
+            
+            requestAnimationFrame(updateNumber);
+        }
+    </script>
+
+    <!-- 모바일 네비게이션 오버레이 -->
+    <div class="mobile-nav-overlay"></div>
+    
+    <!-- 모바일 네비게이션 메뉴 -->
+    <div class="mobile-nav-menu">
+        <div class="mobile-nav-header">
+            <a href="../index.html"><span class="company-name">씨앤에스(주)</span></a>
+            <button class="mobile-nav-close" aria-label="메뉴 닫기">&times;</button>
+        </div>
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">회사소개</div>
+                <a href="greeting.html" class="mobile-nav-link">인사말</a>
+                <a href="business.html" class="mobile-nav-link">사업분야</a>
+                <a href="location.html" class="mobile-nav-link">찾아오시는 길</a>
+            </div>
+            
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">HACCP 서비스</div>
+                <a href="services-construction.html" class="mobile-nav-link">HACCP 공사</a>
+                <a href="services-equipment.html" class="mobile-nav-link">HACCP 설비</a>
+                <a href="services.html" class="mobile-nav-link">HACCP 컨설팅</a>
+            </div>
+            
+            <div class="mobile-nav-section">
+                <div class="mobile-nav-section-title">사업실적</div>
+                <a href="cases.html" class="mobile-nav-link">HACCP 공사실적</a>
+                <a href="achievements.html" class="mobile-nav-link">전체 추진실적</a>
+            </div>
+        </div>
+        <a href="contact.html" class="mobile-nav-cta">고객문의</a>
+    </div>
+</body>
+</html>

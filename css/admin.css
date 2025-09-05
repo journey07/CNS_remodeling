@@ -1,0 +1,409 @@
+/* 관리자 페이지 전용 스타일 */
+
+/* 비밀 아이콘 버튼 */
+.admin-secret-btn {
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    padding: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.admin-secret-btn:hover {
+    opacity: 1;
+    background: var(--gray-100);
+}
+
+/* 관리자 헤더 */
+.admin-title {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.logout-btn {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    color: var(--gray-700);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: var(--gray-200);
+}
+
+/* 메인 컨테이너 */
+.admin-main {
+    margin-top: 80px;
+    padding: 40px 20px;
+    min-height: calc(100vh - 80px);
+    background: var(--gray-50);
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.admin-header h1 {
+    color: var(--gray-900);
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.add-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(11, 126, 200, 0.2);
+}
+
+.add-btn:hover {
+    background: var(--blue-600);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(11, 126, 200, 0.3);
+}
+
+/* 관리자 그리드 */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.admin-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-200);
+}
+
+.admin-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.admin-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.admin-card-info h3 {
+    color: var(--gray-900);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.admin-card-meta {
+    color: var(--gray-600);
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.admin-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background: var(--blue-100);
+    color: var(--primary-blue);
+}
+
+.btn-edit:hover {
+    background: var(--blue-200);
+}
+
+.btn-delete {
+    background: var(--red-100);
+    color: var(--red-600);
+}
+
+.btn-delete:hover {
+    background: var(--red-200);
+}
+
+.admin-card-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.admin-tag {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.admin-card-summary {
+    color: var(--gray-600);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.admin-card-images {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.admin-image-thumb {
+    width: 40px;
+    height: 40px;
+    background: var(--gray-200);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+/* 관리자 모달 */
+.admin-modal {
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    color: var(--gray-700);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(11, 126, 200, 0.1);
+}
+
+.form-group small {
+    color: var(--gray-500);
+    font-size: 12px;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid var(--gray-300);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.checkbox-item:hover {
+    border-color: var(--primary-blue);
+    background: var(--blue-50);
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-item input[type="checkbox"]:checked + span {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.btn-cancel, .btn-save {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel {
+    background: var(--gray-200);
+    color: var(--gray-700);
+}
+
+.btn-cancel:hover {
+    background: var(--gray-300);
+}
+
+.btn-save {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.btn-save:hover {
+    background: var(--blue-600);
+    transform: translateY(-1px);
+}
+
+/* 삭제 모달 */
+.delete-modal {
+    max-width: 400px;
+    text-align: center;
+}
+
+.delete-info {
+    background: var(--red-50);
+    color: var(--red-700);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    margin: 16px 0;
+}
+
+.btn-delete {
+    background: var(--red-600);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background: var(--red-700);
+    transform: translateY(-1px);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .admin-header h1 {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+    }
+
+    .admin-card-actions {
+        flex-direction: column;
+    }
+}
+
+/* 추가 색상 변수 (없는 경우) */
+:root {
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-600: #2563eb;
+    --red-50: #fef2f2;
+    --red-100: #fee2e2;
+    --red-200: #fecaca;
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+    --gray-100: #f3f4f6;
+} 
