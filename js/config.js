@@ -2,12 +2,12 @@
 // 프로덕션 환경에서는 빌드 시점에 환경변수로 치환되어야 함
 
 window.CONFIG = {
-    // Supabase 설정 (환경변수로 설정하는 것을 권장)
-    SUPABASE_URL: window.ENV?.SUPABASE_URL || 'https://ejqnjxoblfctkouswgkh.supabase.co',
-    SUPABASE_ANON_KEY: window.ENV?.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVqcW5qeG9ibGZjdGtvdXN3Z2toIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwNjUzMDMsImV4cCI6MjA3MDY0MTMwM30.GQ0hxwrvxvPe7LIWbMRal720FhGmhkr2Krqi5VuNsdU',
+    // Supabase 설정 (환경변수에서만 가져오기 - 보안상 기본값 제거)
+    SUPABASE_URL: window.ENV?.SUPABASE_URL || null,
+    SUPABASE_ANON_KEY: window.ENV?.SUPABASE_ANON_KEY || null,
     
-    // 관리자 설정
-    ADMIN_EMAIL: window.ENV?.ADMIN_EMAIL || 'counted07@gmail.com',
+    // 관리자 설정 (환경변수에서만 가져오기)
+    ADMIN_EMAIL: window.ENV?.ADMIN_EMAIL || null,
     
     // 애플리케이션 설정
     VERSION: '1.0.0',

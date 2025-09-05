@@ -32,5 +32,8 @@ build/
 .env.test.local
 .env.production.local
 
+# Environment JavaScript files with real keys
+js/env.js
+
 # Cache
 .cache/

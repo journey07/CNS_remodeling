@@ -4,9 +4,14 @@
 
 (function() {
 	if (window.supabaseClient) return;
-	// 환경변수에서 가져오거나 기본값 사용 (프로덕션에서는 환경변수 필수)
-	const SUPABASE_URL = window.CONFIG?.SUPABASE_URL || 'https://ejqnjxoblfctkouswgkh.supabase.co';
-	const SUPABASE_ANON_KEY = window.CONFIG?.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVqcW5qeG9ibGZjdGtvdXN3Z2toIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwNjUzMDMsImV4cCI6MjA3MDY0MTMwM30.GQ0hxwrvxvPe7LIWbMRal720FhGmhkr2Krqi5VuNsdU';
+	// 환경변수에서만 가져오기 (보안상 하드코딩 제거)
+	const SUPABASE_URL = window.CONFIG?.SUPABASE_URL;
+	const SUPABASE_ANON_KEY = window.CONFIG?.SUPABASE_ANON_KEY;
+
+	if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+		console.error('[Supabase] 환경변수가 설정되지 않았습니다. window.ENV에 SUPABASE_URL과 SUPABASE_ANON_KEY를 설정하세요.');
+		return;
+	}
 
 	if (!window.supabase || !window.supabase.createClient) {
 		console.error('[Supabase] SDK가 로드되지 않았습니다. CDN 스크립트를 확인하세요.');
