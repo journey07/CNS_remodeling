@@ -110,7 +110,7 @@
             /* Below fixed header */
             margin-top: 80px;
             height: calc(100vh - 80px);
-            background-image: url('assets/hero_alt3.png');
+            background-image: url('/.netlify/images?url=/assets/hero_alt3.png&w=1600&q=70&fm=webp');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center calc(50% + 40px);
@@ -123,6 +123,7 @@
                 padding: 24px 20px 40px 20px;
                 height: auto;
                 min-height: calc(100vh - 70px);
+                background-image: url('/.netlify/images?url=/assets/hero_alt3.png&w=900&q=70&fm=webp');
                 background-position: center top;
             }
         }
@@ -1462,7 +1463,7 @@
                     <!-- Row 1: 5개 업종 -->
                     <div class="portfolio-card" data-industry="식육포장처리업" onclick="openModal('meat-packaging')" style="cursor: pointer;">
                         <div class="card-image">
-                            <img src="assets/portfolio/식육포장처리업/1.jpg" alt="식육포장처리업 HACCP 시공">
+                            <img src="/.netlify/images?url=/assets/portfolio/식육포장처리업/1.jpg&w=520&q=70&fm=webp" alt="식육포장처리업 HACCP 시공" loading="lazy" decoding="async">
                         </div>
                         <div class="card-overlay">
                             <div class="construction-label">시공사진</div>
@@ -1472,7 +1473,7 @@
                     
                     <div class="portfolio-card" data-industry="식육가공업" onclick="openModal('meat-processing')" style="cursor: pointer;">
                         <div class="card-image">
-                            <img src="assets/portfolio/식육가공업/1.jpg" alt="식육가공업 HACCP 시공">
+                            <img src="/.netlify/images?url=/assets/portfolio/식육가공업/1.jpg&w=520&q=70&fm=webp" alt="식육가공업 HACCP 시공" loading="lazy" decoding="async">
                         </div>
                         <div class="card-overlay">
                             <div class="construction-label">시공사진</div>
@@ -1482,7 +1483,7 @@
                     
                     <div class="portfolio-card" data-industry="배추김치" onclick="openModal('baechu')" style="cursor: pointer;">
                         <div class="card-image">
-                            <img src="assets/portfolio/배추김치/1.jpg" alt="배추김치 HACCP 시공">
+                            <img src="/.netlify/images?url=/assets/portfolio/배추김치/1.jpg&w=520&q=70&fm=webp" alt="배추김치 HACCP 시공" loading="lazy" decoding="async">
                         </div>
                         <div class="card-overlay">
                             <div class="construction-label">시공사진</div>
@@ -1492,7 +1493,7 @@
                     
                     <div class="portfolio-card" data-industry="기타김치" onclick="openModal('other-kimchi')" style="cursor: pointer;">
                         <div class="card-image">
-                            <img src="assets/portfolio/기타김치/1.jpg" alt="기타김치 HACCP 시공">
+                            <img src="/.netlify/images?url=/assets/portfolio/기타김치/1.jpg&w=520&q=70&fm=webp" alt="기타김치 HACCP 시공" loading="lazy" decoding="async">
                         </div>
                         <div class="card-overlay">
                             <div class="construction-label">시공사진</div>
@@ -1734,7 +1735,22 @@
             </div>
         </div>
     </footer>
-
+    
+    <script>
+        // Route all portfolio thumbnails through Netlify Image CDN on load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.portfolio-grid img').forEach(function(img){
+                var src = img.getAttribute('src') || '';
+                if (src.startsWith('/.netlify/images')) return;
+                if (src.startsWith('assets/')) {
+                    var cdn = '/.netlify/images?url=/' + src + '&w=520&q=70&fm=webp';
+                    img.setAttribute('src', cdn);
+                    img.setAttribute('loading', 'lazy');
+                    img.setAttribute('decoding', 'async');
+                }
+            });
+        });
+    </script>
     <!-- 배추김치 모달 -->
     <div id="baechu-modal" class="simple-modal">
         <div class="modal-box">
