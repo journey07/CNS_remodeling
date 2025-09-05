@@ -90,6 +90,7 @@
     </script>
     
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" as="image" href="/.netlify/images?url=/assets/hero_alt3.png&w=1600&q=70&fm=webp">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <style>
         /* Paperlogy extra bold for main hero title */
@@ -1737,17 +1738,35 @@
     </footer>
     
     <script>
-        // Route all portfolio thumbnails through Netlify Image CDN on load
+        // True lazy loading for portfolio thumbnails using IntersectionObserver
         document.addEventListener('DOMContentLoaded', function() {
+            var io = new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    if (!entry.isIntersecting) return;
+                    var img = entry.target;
+                    var dataSrc = img.getAttribute('data-src');
+                    if (dataSrc) {
+                        img.src = dataSrc;
+                        img.removeAttribute('data-src');
+                    }
+                    io.unobserve(img);
+                });
+            }, { rootMargin: '300px 0px' });
+
             document.querySelectorAll('.portfolio-grid img').forEach(function(img){
                 var src = img.getAttribute('src') || '';
-                if (src.startsWith('/.netlify/images')) return;
-                if (src.startsWith('assets/')) {
-                    var cdn = '/.netlify/images?url=/' + src + '&w=520&q=70&fm=webp';
-                    img.setAttribute('src', cdn);
-                    img.setAttribute('loading', 'lazy');
-                    img.setAttribute('decoding', 'async');
+                // If already transformed, just observe; otherwise set data-src to CDN URL
+                if (!src || !src.startsWith('/.netlify/images')) {
+                    var raw = src.replace(/^\//, '');
+                    if (raw.startsWith('assets/')) {
+                        var cdn = '/.netlify/images?url=/' + raw + '&w=520&q=70&fm=webp';
+                        img.setAttribute('data-src', cdn);
+                        img.removeAttribute('src');
+                    }
                 }
+                img.setAttribute('loading', 'lazy');
+                img.setAttribute('decoding', 'async');
+                io.observe(img);
             });
         });
     </script>
