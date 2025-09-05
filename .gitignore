@@ -32,8 +32,8 @@ build/
 .env.test.local
 .env.production.local
 
-# Environment JavaScript files with real keys
-js/env.js
+# Note: js/env.js is now tracked as a template file
+# Real values should only be added locally for development
 
 # Cache
 .cache/
