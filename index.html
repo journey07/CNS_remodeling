@@ -90,7 +90,7 @@
     </script>
     
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preload" as="image" href="/.netlify/images?url=/assets/hero_alt3.png&w=1600&q=70&fm=webp">
+    <link rel="preload" as="image" href="/.netlify/images?url=/assets/hero_alt1.png&w=1600&q=70&fm=avif">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <style>
         /* Paperlogy extra bold for main hero title */
@@ -111,10 +111,6 @@
             /* Below fixed header */
             margin-top: 80px;
             height: calc(100vh - 80px);
-            background-image: url('/.netlify/images?url=/assets/hero_alt3.png&w=1600&q=70&fm=webp');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center calc(50% + 40px);
             overflow: hidden;
         }
 
@@ -124,10 +120,22 @@
                 padding: 24px 20px 40px 20px;
                 height: auto;
                 min-height: calc(100vh - 70px);
-                background-image: url('/.netlify/images?url=/assets/hero_alt3.png&w=900&q=70&fm=webp');
                 background-position: center top;
             }
         }
+
+        /* Picture-based hero background */
+        .hero-compact .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-compact .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-compact .hero-inner { position: relative; z-index: 1; }
 
         .hero-compact .hero-inner {
             max-width: 1300px;
@@ -1236,6 +1244,25 @@
     <main>
         <!-- 히어로 섹션 (리모델링) -->
         <section id="hero" class="hero hero-compact" aria-label="HACCP 추진기업 안내">
+            <picture class="hero-bg">
+                <source type="image/avif" srcset="
+                    /.netlify/images?url=/assets/hero_alt1.png&w=900&q=70&fm=avif 900w,
+                    /.netlify/images?url=/assets/hero_alt1.png&w=1600&q=70&fm=avif 1600w,
+                    /.netlify/images?url=/assets/hero_alt1.png&w=1920&q=70&fm=avif 1920w
+                " sizes="100vw">
+                <source type="image/webp" srcset="
+                    /.netlify/images?url=/assets/hero_alt1.png&w=900&q=70&fm=webp 900w,
+                    /.netlify/images?url=/assets/hero_alt1.png&w=1600&q=70&fm=webp 1600w,
+                    /.netlify/images?url=/assets/hero_alt1.png&w=1920&q=70&fm=webp 1920w
+                " sizes="100vw">
+                <img
+                    src="/.netlify/images?url=/assets/hero_alt1.png&w=1600&q=70"
+                    alt="Hero background"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="sync"
+                    width="1600" height="900">
+            </picture>
             <div class="hero-inner">
                 <div class="hero-panel">
                     <h1 class="hero-title">HACCP 추진 전문기업</h1>
